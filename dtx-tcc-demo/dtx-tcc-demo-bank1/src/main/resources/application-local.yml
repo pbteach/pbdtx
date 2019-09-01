@@ -1,0 +1,60 @@
+server: 
+  port: 56081
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:56080/eureka/
+
+spring:
+  ##################### DB #####################
+  datasource:
+    ds0:
+      url: jdbc:mysql://localhost:3306/bank1?useUnicode=true
+      username: root
+      password: mysql
+      type: com.alibaba.druid.pool.DruidDataSource
+      driver-class-name: com.mysql.jdbc.Driver
+      initialSize: 5
+      minIdle: 5
+      maxActive: 20
+      maxWait: 60000
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: SELECT user()
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: true
+      connection-properties: druid.stat.mergeSql:true;druid.stat.slowSqlMillis:5000
+
+org:
+  dromara:
+    hmily :
+      serializer : kryo
+      recoverDelayTime : 30
+      retryMax : 30
+      scheduledDelay : 30
+      scheduledThreadMax :  10
+      repositorySupport : db
+      started: true
+      hmilyDbConfig :
+        driverClassName  : com.mysql.jdbc.Driver
+        url :  jdbc:mysql://localhost:3306/hmily?useUnicode=true
+        username : root
+        password : mysql
+
+
+
+logging:
+  level:
+    root: info
+    org.springframework.web: info
+    org.apache.ibatis: info
+    org.dromara.hmily.bonuspoint: debug
+    org.dromara.hmily.lottery: debug
+    org.dromara.hmily: debug
+    io.netty: info
+    com.pbteach.wanxintx.seatademo.bank2: debug
+
+

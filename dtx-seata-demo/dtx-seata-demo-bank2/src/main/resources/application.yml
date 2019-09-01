@@ -1,0 +1,67 @@
+spring:
+  application:
+    name: seata-demo-bank2
+  profiles: 
+    active: local
+
+  main:
+    allow-bean-definition-overriding: true
+
+
+
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+
+server:
+  servlet:
+    context-path: /bank2
+
+
+    
+eureka:
+  instance:
+    preferIpAddress: true
+    instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${spring.application.instance_id:${server.port}}
+    lease-renewal-interval-in-seconds: 5    # 续约更新时间间隔（默认30秒）
+    lease-expiration-duration-in-seconds: 10 # 续约到期时间（默认90秒）
+  client:
+    registry-fetch-interval-seconds: 5 # 抓取服务列表
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh,health,info,env
+
+
+feign:
+  hystrix:
+    enabled: true
+  compression:
+    request:
+      enabled: true # 配置请求GZIP压缩
+      mime-types: ["text/xml","application/xml","application/json"] # 配置压缩支持的MIME TYPE
+      min-request-size: 2048 # 配置压缩数据大小的下限
+    response:
+      enabled: true # 配置响应GZIP压缩
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 1000  # 设置熔断超时时间  default 1000
+        timeout:
+          enabled: true # 打开超时熔断功能 default true
+
+
+ribbon:
+  ConnectTimeout: 600 # 设置连接超时时间 default 2000
+  ReadTimeout: 6000    # 设置读取超时时间  default 5000
+  OkToRetryOnAllOperations: true # 对所有操作请求都进行重试  default false
+  MaxAutoRetriesNextServer: 2    # 切换实例的重试次数  default 1
+  MaxAutoRetries: 1     # 对当前实例的重试次数 default 0
+
