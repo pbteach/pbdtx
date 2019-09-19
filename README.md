@@ -20,3 +20,6 @@ BASE理论：<https://blog.csdn.net/weixin_44062339/article/details/99711052>
 
 代码实现步骤：<https://blog.csdn.net/weixin_44062339/article/details/100180487>
 
+# 4 课程视频
+
+分布式事务课程视频：<http://www.pbteach.com/post/java_video/subject_dtx/>
