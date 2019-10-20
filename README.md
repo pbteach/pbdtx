@@ -23,3 +23,15 @@ BASE理论：<https://blog.csdn.net/weixin_44062339/article/details/99711052>
 # 4 课程视频
 
 分布式事务课程视频：<http://www.pbteach.com/post/java_video/subject_dtx/>
+# 5 系列讲义
+http://www.pbteach.com/post/java_distribut/subject_dtx-01/
+
+http://www.pbteach.com/post/java_distribut/subject_dtx-02/
+
+http://www.pbteach.com/post/java_distribut/subject_dtx-03/
+
+http://www.pbteach.com/post/java_distribut/subject_dtx-04/
+
+http://www.pbteach.com/post/java_distribut/subject_dtx-05/
+
+http://www.pbteach.com/post/java_distribut/subject_dtx-06/
