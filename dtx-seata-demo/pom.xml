@@ -9,6 +9,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <artifactId>dtx-seata-demo</artifactId>
+    <packaging>pom</packaging>
     <modules>
         <module>dtx-seata-demo-bank1</module>
         <module>dtx-seata-demo-bank2</module>
