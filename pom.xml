@@ -10,6 +10,10 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>dtx-seata-demo</module>
+        <module>dtx-txmsg-demo</module>
+        <module>dtx-tcc-demo</module>
+        <module>dtx-notifymsg-demo</module>
+        <module>discover-server</module>
     </modules>
 
     <properties>
